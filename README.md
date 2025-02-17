@@ -1,6 +1,6 @@
 [![My Qiita posts](https://qiita-badge.apiapi.app/s/tsuzuki817/posts.svg)](http://qiita.com/tsuzuki817) [![My Qiita contributions](https://qiita-badge.apiapi.app/s/tsuzuki817/contributions.svg)](http://qiita.com/tsuzuki817) [![My Qiita followers](https://qiita-badge.apiapi.app/s/tsuzuki817/followers.svg)](http://qiita.com/tsuzuki817)
 
-[![GitHub stats](https://github-readme-stats.vercel.app/api?username=bannzai&count_private=true&theme=dracula)](https://github.com/anuraghazra/github-readme-stats)
+[![GitHub stats](https://github-readme-stats.vercel.app/api?username=tsuzukihashi&count_private=true&theme=dracula)](https://github.com/anuraghazra/github-readme-stats)
 
 ![Top Languages Card](https://github-readme-stats.vercel.app/api/top-langs/?username=bannzai&count_private=true&theme=tokyonight&layout=compact)
 
