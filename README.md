@@ -52,18 +52,18 @@
 ## 📊 GitHub Stats
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=tsuzukihashi&show_icons=true&theme=tokyonight&count_private=true&hide_border=true" height="170" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=tsuzukihashi&layout=compact&theme=tokyonight&count_private=true&hide_border=true" height="170" />
+  <img src="https://github-readme-stats-sigma-five.vercel.app/api?username=tsuzukihashi&show_icons=true&theme=tokyonight&count_private=true&hide_border=true" height="170" />
+  <img src="https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=tsuzukihashi&layout=compact&theme=tokyonight&count_private=true&hide_border=true" height="170" />
 </p>
 
 <p align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=tsuzukihashi&theme=tokyonight&hide_border=true" />
+  <img src="https://streak-stats.demolab.com/?user=tsuzukihashi&theme=tokyonight&hide_border=true" />
 </p>
 
 ## 🏆 GitHub Trophies
 
 <p align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=tsuzukihashi&theme=tokyonight&no-frame=true&column=7" />
+  <img src="https://github-trophies.vercel.app/?username=tsuzukihashi&theme=tokyonight&no-frame=true&column=7" />
 </p>
 
 ## 📈 Activity Graph
