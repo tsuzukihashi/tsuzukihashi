@@ -4,7 +4,7 @@
 
 ## 👋 About Me / 自己紹介
 
-🇯🇵 群馬県在住のiOSエンジニア。「**思い出 × テクノロジー**」をテーマに、個人アプリ43本以上を開発・公開しています。累計30万ダウンロード突破。
+🇯🇵 群馬県在住のiOSエンジニア。「**思い出 × テクノロジー**」をテーマに、個人アプリ44本以上を開発・公開しています。累計30万ダウンロード突破。
 
 🇺🇸 iOS Developer based in Gunma, Japan. Building apps around the theme of "**Memories × Technology**". 44+ apps published with 300K+ total downloads.
 
