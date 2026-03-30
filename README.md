@@ -1,4 +1,4 @@
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&size=24&pause=1000&color=70A5FD&width=600&lines=iOS+Developer+%40+ZOZO;43%2B+Apps+Published+%7C+300K%2B+Downloads;%E6%80%9D%E3%81%84%E5%87%BA+%C3%97+%E3%83%86%E3%82%AF%E3%83%8E%E3%83%AD%E3%82%B8%E3%83%BC)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&size=24&pause=1000&color=70A5FD&width=600&lines=iOS+Developer+%40+ZOZO;44%2B+Apps+Published+%7C+300K%2B+Downloads;%E6%80%9D%E3%81%84%E5%87%BA+%C3%97+%E3%83%86%E3%82%AF%E3%83%8E%E3%83%AD%E3%82%B8%E3%83%BC)](https://git.io/typing-svg)
 
 ![Visitor Count](https://komarev.com/ghpvc/?username=tsuzukihashi&color=blueviolet&style=flat-square&label=Profile+Views)
 
@@ -6,7 +6,7 @@
 
 🇯🇵 群馬県在住のiOSエンジニア。「**思い出 × テクノロジー**」をテーマに、個人アプリ43本以上を開発・公開しています。累計30万ダウンロード突破。
 
-🇺🇸 iOS Developer based in Gunma, Japan. Building apps around the theme of "**Memories × Technology**". 43+ apps published with 300K+ total downloads.
+🇺🇸 iOS Developer based in Gunma, Japan. Building apps around the theme of "**Memories × Technology**". 44+ apps published with 300K+ total downloads.
 
 ## 💼 Career / キャリア
 
