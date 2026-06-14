@@ -4,9 +4,9 @@
 
 ## 👋 About Me / 自己紹介
 
-🇯🇵 群馬県在住のiOSエンジニア。「**思い出 × テクノロジー**」をテーマに、個人アプリ44本以上を開発・公開しています。累計30万ダウンロード突破。
+🇯🇵 群馬県在住のiOSエンジニア。「**思い出 × テクノロジー**」をテーマに、個人アプリ50本以上を開発・公開しています。累計50万ダウンロード突破。
 
-🇺🇸 iOS Developer based in Gunma, Japan. Building apps around the theme of "**Memories × Technology**". 44+ apps published with 300K+ total downloads.
+🇺🇸 iOS Developer based in Gunma, Japan. Building apps around the theme of "**Memories × Technology**". 50+ apps published with 500K+ total downloads.
 
 ## 💼 Career / キャリア
 
@@ -15,17 +15,17 @@
 | 2024 - Now | **ZOZO** | iOS Engineer | ZOZOTOWN |
 | 2023 | **DeNA** | iOS Engineer | Pococha |
 | 2019 | **Yahoo Japan** | iOS Engineer | PayPayフリマ |
-| 2017 - | **Individual** | Creator | 個人開発 43+ Apps |
+| 2016 - | **Individual** | Creator | 個人開発 43+ Apps |
 
 ## 📱 Featured Apps / 代表アプリ
 
 | App | Downloads | Rating | Description |
 |-----|-----------|--------|-------------|
 | 📝 **流れるメモ帳** | 150,000+ | ★4.3 | PiPを活用した流れるメモアプリ / Floating memo app using PiP |
-| 🗺 **旅行思い出マップ** | 80,000+ | ★4.7 | 旅の思い出を地図に記録 / Record travel memories on a map |
+| 🗺 **旅行思い出マップ** | 130,000+ | ★4.7 | 旅の思い出を地図に記録 / Record travel memories on a map |
 | ⏱ **いつでもタイマー** | - | ★4.8 | Live Activityタイマー / Live Activity timer 🏆 **神アプリグランプリ受賞** |
 
-> 📊 **Total:** 43+ apps published / 300,000+ downloads / ★4.6 avg rating
+> 📊 **Total:** 50+ apps published / 500,000+ downloads / ★4.6 avg rating
 
 ## 🏆 Achievements / 実績
 
