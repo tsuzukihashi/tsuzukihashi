@@ -1,12 +1,12 @@
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&size=24&pause=1000&color=70A5FD&width=600&lines=iOS+Developer+%40+ZOZO;50%2B+Apps+Published+%7C+500K%2B+Downloads;%E6%80%9D%E3%81%84%E5%87%BA+%C3%97+%E3%83%86%E3%82%AF%E3%83%8E%E3%83%AD%E3%82%B8%E3%83%BC)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&size=24&pause=1000&color=70A5FD&width=600&lines=iOS+Developer+%40+ZOZO;62+Apps+Published+%7C+600K%2B+Downloads;%E6%80%9D%E3%81%84%E5%87%BA+%C3%97+%E3%83%86%E3%82%AF%E3%83%8E%E3%83%AD%E3%82%B8%E3%83%BC)](https://git.io/typing-svg)
 
 ![Visitor Count](https://komarev.com/ghpvc/?username=tsuzukihashi&color=blueviolet&style=flat-square&label=Profile+Views)
 
 ## 👋 About Me / 自己紹介
 
-🇯🇵 群馬県在住のiOSエンジニア。「**思い出 × テクノロジー**」をテーマに、個人アプリ50本以上を開発・公開しています。累計50万ダウンロード突破。
+🇯🇵 群馬県在住のiOSエンジニア。「**思い出 × テクノロジー**」をテーマに、個人アプリ62本を公開中。累計60万ダウンロード突破。
 
-🇺🇸 iOS Developer based in Gunma, Japan. Building apps around the theme of "**Memories × Technology**". 50+ apps published with 500K+ total downloads.
+🇺🇸 iOS Developer based in Gunma, Japan. Building apps around the theme of "**Memories × Technology**". 62 apps published with 600K+ total downloads.
 
 ## 💼 Career / キャリア
 
@@ -15,24 +15,25 @@
 | 2024 - Now | **ZOZO** | iOS Engineer | ZOZOTOWN |
 | 2023 | **DeNA** | iOS Engineer | Pococha |
 | 2019 | **Yahoo Japan** | iOS Engineer | PayPayフリマ |
-| 2016 - | **Individual** | Creator | 個人開発 43+ Apps |
+| 2016 - | **Individual** | Creator | 個人開発 62 Apps |
 
 ## 📱 Featured Apps / 代表アプリ
 
 | App | Downloads | Rating | Description |
 |-----|-----------|--------|-------------|
-| 📝 **流れるメモ帳** | 150,000+ | ★4.3 | PiPを活用した流れるメモアプリ / Floating memo app using PiP |
-| 🗺 **旅行思い出マップ** | 130,000+ | ★4.7 | 旅の思い出を地図に記録 / Record travel memories on a map |
-| ⏱ **いつでもタイマー** | - | ★4.8 | Live Activityタイマー / Live Activity timer 🏆 **神アプリグランプリ受賞** |
+| 📝 **流れるメモ帳** | 160,000+ | ★4.3 | PiPを活用した流れるメモアプリ / Floating memo app using PiP |
+| 💩 **うんちくん** | 150,000+ | ★4.1 | AI健康記録&うんトモ（iOS/Android）/ AI health tracking app |
+| 🗺 **旅行思い出マップ** | 140,000+ | ★4.6 | 旅の思い出を地図に記録（iOS/Android）/ Record travel memories on a map |
+| ⏱ **いつでもタイマー** | - | - | Live Activityタイマー 🏆 **神アプリグランプリ受賞** |
 
-> 📊 **Total:** 50+ apps published / 500,000+ downloads / ★4.6 avg rating
+> 📊 **Total:** 62 apps published / 600,000+ downloads / ★4.3 avg rating (2,000+ reviews)
 
 ## 🏆 Achievements / 実績
 
 - 🎤 **iOSDC Japan 2022** - Speaker（PiPを使ったUI表示について登壇）
 - 🏅 **神アプリグランプリ** 受賞（いつでもタイマー）
 - 📈 個人アプリ広告収入 **年間100万円以上**（2022年）
-- 📱 累計 **58本以上** のアプリを開発（公開中43本）
+- 📱 累計 **77本以上** のアプリを開発（公開中62本）
 
 ## 🛠 Tech Stack
 
