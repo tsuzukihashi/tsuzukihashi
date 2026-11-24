@@ -6,7 +6,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700;800&family=RocknRoll+One&display=block">
-<script src="data.js"></script>
+<script src="data.js"></script><!-- sync.py が tsuzukit.com のデータから作る -->
 <style>
 :root {
   --r: #ff4f6d; --dot: #ff7a90; --k: #2a1020; --y: #ffd23f; --paper: #fffdf6; --mute: #6d5a63;
@@ -94,6 +94,7 @@ html, body { margin: 0; background: transparent; color: var(--k); font-family: v
 #lineup .lb { width: 196px; flex: none; display: flex; align-items: center; gap: 10px; }
 #lineup .lb .rare { width: 58px; text-align: center; }
 #lineup .lb span { font: 800 13px/1.3 var(--body); }
+#lineup .lb span b { font: inherit; }
 #lineup .lb span small { display: block; font-weight: 700; font-size: 11px; color: var(--mute); }
 #lineup .caps { display: flex; gap: 8px; align-items: center; }
 #lineup .caps .cap { --s: 46px; border-width: 2.5px; }
@@ -151,9 +152,9 @@ html, body { margin: 0; background: transparent; color: var(--k); font-family: v
       <h1 class="outline">NOBODY<br>ELSE WILL.</h1>
       <div class="bubble"><b>誰も作らないものを、まじめに作る。</b><small>I build what nobody else will, and I build it properly.</small></div>
       <div class="stickers">
-        <div class="st" style="--c:var(--c1);--rot:-4deg"><b>10年</b><span>個人開発</span><small>years of indie dev</small></div>
-        <div class="st" style="--c:var(--c3);--rot:3deg"><b>105</b><span>公開中のアプリ</span><small>apps live</small></div>
-        <div class="st" style="--c:var(--c6);--rot:-2deg"><b>82万+</b><span>ダウンロード</span><small>820K+ downloads</small></div>
+        <div class="st" style="--c:var(--c1);--rot:-4deg"><b data-k="years_ja">10年</b><span>個人開発</span><small>years of indie dev</small></div>
+        <div class="st" style="--c:var(--c3);--rot:3deg"><b data-k="apps">105</b><span>公開中のアプリ</span><small>apps live</small></div>
+        <div class="st" style="--c:var(--c6);--rot:-2deg"><b data-k="dl_ja">82万+</b><span>ダウンロード</span><small data-k="dl_en_label">820K+ downloads</small></div>
       </div>
     </div>
     <div class="owner">
@@ -176,10 +177,10 @@ html, body { margin: 0; background: transparent; color: var(--k); font-family: v
 <section class="card" id="lineup">
   <div class="box">
     <div class="head"><b>排出のめやす</b><small>App Store と Google Play のダウンロード数で決まるレア度 / Rarity by total downloads</small></div>
-    <div class="row" data-t="SSR"><div class="lb"><span class="rare SSR">SSR</span><span>10万DL以上 · 3種<small>100K+ downloads</small></span></div><div class="caps"></div></div>
-    <div class="row" data-t="SR"><div class="lb"><span class="rare SR">SR</span><span>1万DL以上 · 6種<small>10K+ downloads</small></span></div><div class="caps"></div></div>
-    <div class="row" data-t="R"><div class="lb"><span class="rare R">R</span><span>1000DL以上 · 7種<small>1K+ downloads</small></span></div><div class="caps"></div></div>
-    <div class="row" data-t="N"><div class="lb"><span class="rare N">N</span><span>これから育つ · 89種<small>Still growing</small></span></div><div class="caps"></div></div>
+    <div class="row" data-t="SSR"><div class="lb"><span class="rare SSR">SSR</span><span>10万DL以上 · <b data-k="n_SSR">3</b>種<small>100K+ downloads</small></span></div><div class="caps"></div></div>
+    <div class="row" data-t="SR"><div class="lb"><span class="rare SR">SR</span><span>1万DL以上 · <b data-k="n_SR">6</b>種<small>10K+ downloads</small></span></div><div class="caps"></div></div>
+    <div class="row" data-t="R"><div class="lb"><span class="rare R">R</span><span>1000DL以上 · <b data-k="n_R">7</b>種<small>1K+ downloads</small></span></div><div class="caps"></div></div>
+    <div class="row" data-t="N"><div class="lb"><span class="rare N">N</span><span>これから育つ · <b data-k="n_N">89</b>種<small>Still growing</small></span></div><div class="caps"></div></div>
   </div>
 </section>
 
@@ -224,11 +225,12 @@ html, body { margin: 0; background: transparent; color: var(--k); font-family: v
 </section>
 
 <script>
+const P = window.P || {};
 const SH = [
   ['sh-who', 'WHO I AM', 'はじめまして', 'c6'],
   ['sh-pick', 'JACKPOTS', '大当たりのカプセル', 'c3'],
-  ['sh-lineup', 'LINEUP', '105本のラインナップ', 'c1'],
-  ['sh-journey', 'MY 10 YEARS', '10年のあゆみ', 'c5'],
+  ['sh-lineup', 'LINEUP', `${P.apps}本のラインナップ`, 'c1'],
+  ['sh-journey', `MY ${P.years} YEARS`, `${P.years}年のあゆみ`, 'c5'],
   ['sh-career', 'CAREER', '経歴', 'c2'],
   ['sh-skills', 'SKILLS', '使っている技術', 'c4'],
   ['sh-rules', 'HOW I BUILD', '作るときの決めごと', 'c6'],
@@ -243,6 +245,7 @@ const PICKS = [
   { id: 'pick-travel', icon: 'src/travel_memory_map.webp', c: 'c5', rare: 'SSR', badge: 'ロングセラー', name: '旅行思い出マップ', ja: '旅の記憶を、地図に描く', en: 'Paint your travel memories onto the map', dl: '160,000+', star: '★4.6', plat: ['iOS', 'Android'] },
   { id: 'pick-oshi', icon: 'https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/af/d5/94/afd59419-8cf8-ecff-754d-ba77e548d756/AppIcon-0-0-1x_U007ephone-0-1-85-220.jpeg/256x256bb.jpg', c: 'c2', rare: 'SR', badge: 'バズ', name: '推しアイランド', ja: '画面のいちばん上に、推しのドット絵', en: 'Your fave in pixel art, in the Dynamic Island', dl: '63,000+', star: '', plat: ['iOS', 'Android'] },
 ];
+PICKS.forEach(p => Object.assign(p, (P.picks || {})[p.id] || {}));
 document.getElementById('picks').innerHTML = PICKS.map(p => `
 <section class="card pick" id="${p.id}"><div class="box">
   <span class="cap" style="--c:var(--${p.c})"><img src="${p.icon}" alt=""></span>
@@ -258,11 +261,11 @@ document.getElementById('picks').innerHTML = PICKS.map(p => `
 const COLORS = ['c1', 'c2', 'c3', 'c4', 'c5', 'c6'];
 let n = 0;
 document.querySelectorAll('#lineup .row').forEach(row => {
-  const t = row.dataset.t, icons = ((window.TIERS || {})[t] || []).slice(0, 8);
+  const t = row.dataset.t, icons = ((P.tiers || {})[t] || []).slice(0, 8);
   row.querySelector('.caps').innerHTML = icons.map(src => {
     const c = COLORS[n++ % 6], rot = ((n * 37) % 30) - 15;
     return `<span class="cap" style="--c:var(--${c});--rot:${rot}deg"><img src="${src}" alt=""></span>`;
-  }).join('') + (t === 'N' ? '<span class="more">ほか81種<small>+81 more</small></span>' : '');
+  }).join('') + (t === 'N' ? `<span class="more">ほか${P.n_N - 8}種<small>+${P.n_N - 8} more</small></span>` : '');
 });
 
 const BTNS = [
@@ -273,10 +276,12 @@ const BTNS = [
   ['btn-tiktok', '', '<img src="src/tiktok.png" alt="">', 'TikTok'],
   ['btn-qiita', '', '<span class="q">Q</span>', 'Qiita'],
   ['btn-income', 'y', '', '収益公開を読む →'],
-  ['btn-apps', 'y', '', '105本ぜんぶ見る →'],
+  ['btn-apps', 'y', '', `${P.apps}本ぜんぶ見る →`],
 ];
 document.getElementById('btns').innerHTML = BTNS.map(([id, v, ic, label]) =>
   `<section class="card btn ${v}" id="${id}"><div class="box">${ic}<span>${label}</span></div></section>`).join('');
+
+document.querySelectorAll('[data-k]').forEach(e => { if (P[e.dataset.k] != null) e.textContent = P[e.dataset.k]; });
 
 const c = new URLSearchParams(location.search).get('c');
 if (c) document.getElementById(c).classList.add('on');
