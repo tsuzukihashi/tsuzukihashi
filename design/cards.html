@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<!-- README の画像の元。render.sh が ?c=<id> で1枚ずつ Chrome で書き出す -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;700;800&family=RocknRoll+One&display=block">
+<script src="data.js"></script>
+<style>
+:root {
+  --r: #ff4f6d; --dot: #ff7a90; --k: #2a1020; --y: #ffd23f; --paper: #fffdf6; --mute: #6d5a63;
+  --ssr: #ff3d7f; --sr: #8a3ffc; --rr: #1f8bff; --n: #6b7280;
+  --c1: #7fd3f7; --c2: #b78cf0; --c3: #ffd84a; --c4: #ff9f43; --c5: #7bd389; --c6: #ff8fc3;
+  --head: 'RocknRoll One', sans-serif;
+  --body: 'M PLUS Rounded 1c', sans-serif;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; background: transparent; color: var(--k); font-family: var(--body); -webkit-font-smoothing: antialiased; }
+.card { display: none; position: relative; }
+.card.on { display: block; }
+.card.sh.on { display: flex; }
+
+/* 部品 */
+.dots { background-color: var(--r); background-image: radial-gradient(var(--dot) 3.5px, transparent 4px); background-size: 30px 30px; }
+.box { position: absolute; left: 0; top: 0; border: 4px solid var(--k); border-radius: 28px; box-shadow: 9px 9px 0 var(--k); overflow: hidden; }
+.outline { font-family: var(--head); color: #fff; -webkit-text-stroke: 5px var(--k); paint-order: stroke fill; text-shadow: 6px 6px 0 var(--k); }
+.pill { display: inline-block; background: #fff; border: 2.5px solid var(--k); border-radius: 999px; padding: 3px 12px; font: 800 13px/1.5 var(--body); }
+.cap { --c: var(--c1); --s: 64px; position: relative; flex: none; width: var(--s); height: var(--s); border-radius: 50%; border: 3px solid var(--k);
+  background: linear-gradient(var(--c) 0 47%, var(--k) 47% 53%, #fff 53%); transform: rotate(var(--rot, 0deg)); }
+.cap img { position: absolute; left: 19%; top: 19%; width: 62%; height: 62%; border-radius: 24%; border: 2px solid var(--k); object-fit: cover; background: #fff; }
+.cap em { position: absolute; inset: 0; display: grid; place-items: center; font: 400 15px/1 var(--head); font-style: normal; color: var(--k); }
+.cap em span { background: #fff; border: 2px solid var(--k); border-radius: 999px; padding: 3px 7px; }
+.rare { display: inline-block; border: 2.5px solid var(--k); border-radius: 8px; padding: 1px 9px; font: 400 15px/1.4 var(--head); color: #fff; -webkit-text-stroke: 3px var(--k); paint-order: stroke fill; }
+.rare.SSR { background: var(--ssr); } .rare.SR { background: var(--sr); } .rare.R { background: var(--rr); } .rare.N { background: var(--n); }
+
+/* ヒーロー 900x470 */
+#hero { width: 900px; height: 470px; }
+#hero .box { width: 887px; height: 457px; }
+#hero .left { position: absolute; left: 40px; top: 30px; width: 500px; }
+#hero .logo { display: inline-flex; align-items: center; background: #fff; border: 3px solid var(--k); border-radius: 999px; padding: 6px 16px; box-shadow: 4px 4px 0 var(--k); }
+#hero .logo img { height: 26px; display: block; }
+#hero .who { display: inline-block; margin-left: 10px; vertical-align: middle; font: 800 14px/1.4 var(--body); color: #fff; }
+#hero h1 { margin: 16px 0 0; font-size: 64px; line-height: 1.12; letter-spacing: .01em; }
+#hero .bubble { display: inline-block; margin-top: 14px; background: #fff; border: 3px solid var(--k); border-radius: 18px; padding: 10px 18px; box-shadow: 5px 5px 0 var(--k); }
+#hero .bubble b { display: block; font: 800 20px/1.5 var(--body); }
+#hero .bubble small { display: block; font: 700 13px/1.5 var(--body); color: var(--mute); }
+#hero .stickers { display: flex; gap: 16px; margin-top: 20px; }
+#hero .st { background: var(--c, #fff); border: 3px solid var(--k); border-radius: 18px; padding: 6px 14px 7px; box-shadow: 4px 4px 0 var(--k); transform: rotate(var(--rot, -3deg)); text-align: center; }
+#hero .st b { display: block; font: 400 26px/1.2 var(--head); }
+#hero .st span { display: block; font: 800 12px/1.3 var(--body); white-space: nowrap; }
+#hero .st small { display: block; font: 700 10.5px/1.3 var(--body); white-space: nowrap; }
+#hero .owner { position: absolute; right: 44px; top: 36px; width: 290px; height: 374px; background: var(--y); border: 4px solid var(--k); border-radius: 26px; box-shadow: 7px 7px 0 var(--k); transform: rotate(2deg); text-align: center; }
+#hero .tab { position: absolute; left: 50%; top: -16px; transform: translateX(-50%); white-space: nowrap; background: var(--k); color: #fff; border-radius: 999px; padding: 4px 14px; font: 800 12px/1.5 var(--body); }
+#hero .photo { width: 196px; height: 196px; margin: 28px auto 0; border-radius: 50%; background: #fff; border: 4px solid var(--k); overflow: hidden; }
+#hero .photo img { width: 100%; height: 100%; object-fit: cover; transform: scale(1.16) translateY(3%); }
+#hero .name { margin: 12px 0 0; font: 400 25px/1.3 var(--head); }
+#hero .name small { display: block; font: 800 12.5px/1.4 var(--body); color: var(--mute); }
+#hero .badges { display: flex; justify-content: center; margin-right: 40px; gap: 6px; margin-top: 10px; }
+#hero .badges .pill { font-size: 11.5px; padding: 2px 10px; }
+#hero .wave { position: absolute; right: 14px; bottom: 6px; width: 104px; transform: rotate(8deg); }
+
+/* 節の見出し 900x84 */
+.sh { width: 900px; height: 84px; align-items: center; gap: 16px; padding: 0 6px 6px; }
+.sh .cap { --s: 44px; }
+.sh h2 { margin: 0; font-size: 38px; line-height: 1; -webkit-text-stroke: 4px var(--k); text-shadow: 4px 4px 0 var(--k); letter-spacing: .02em; }
+.sh .pill { font-size: 15px; padding: 4px 14px; box-shadow: 3px 3px 0 var(--k); }
+
+/* 大当たり 440x232 */
+.pick { width: 440px; height: 232px; }
+.pick .box { width: 428px; height: 220px; background: #fff; border-radius: 26px; box-shadow: 8px 8px 0 var(--k); display: flex; gap: 18px; align-items: center; padding: 0 20px; }
+.pick .cap { --s: 116px; border-width: 4px; }
+.pick .cap img { border-width: 3px; }
+.pick .body { min-width: 0; }
+.pick .top { display: flex; align-items: center; gap: 8px; }
+.pick .badge { font: 800 12px/1.4 var(--body); background: var(--y); border: 2px solid var(--k); border-radius: 999px; padding: 1px 9px; }
+.pick h3 { margin: 8px 0 0; font: 400 25px/1.25 var(--head); white-space: nowrap; }
+.pick p { margin: 6px 0 0; font: 800 13.5px/1.45 var(--body); white-space: nowrap; }
+.pick p small { display: block; font: 700 11.5px/1.4 var(--body); color: var(--mute); }
+.pick .nums { display: flex; align-items: baseline; gap: 12px; margin-top: 10px; }
+.pick .nums b { font: 400 24px/1 var(--head); }
+.pick .nums span { font: 800 12px/1 var(--body); }
+.pick .plat { display: flex; gap: 5px; margin-top: 9px; }
+.pick .plat i { font: 800 10.5px/1.5 var(--body); font-style: normal; border: 2px solid var(--k); border-radius: 6px; padding: 0 6px; background: var(--paper); }
+
+/* 排出のめやす 900x330 */
+#lineup { width: 900px; height: 330px; }
+#lineup .box { width: 887px; height: 317px; background: var(--paper); padding: 22px 30px; }
+#lineup .head { display: flex; align-items: baseline; gap: 12px; }
+#lineup .head b { font: 400 24px/1.2 var(--head); }
+#lineup .head small { font: 800 13px/1.4 var(--body); color: var(--mute); }
+#lineup .row { display: flex; align-items: center; gap: 14px; height: 58px; border-top: 2.5px dashed rgba(42,16,32,.25); }
+#lineup .row:first-of-type { margin-top: 10px; }
+#lineup .lb { width: 196px; flex: none; display: flex; align-items: center; gap: 10px; }
+#lineup .lb .rare { width: 58px; text-align: center; }
+#lineup .lb span { font: 800 13px/1.3 var(--body); }
+#lineup .lb span small { display: block; font-weight: 700; font-size: 11px; color: var(--mute); }
+#lineup .caps { display: flex; gap: 8px; align-items: center; }
+#lineup .caps .cap { --s: 46px; border-width: 2.5px; }
+#lineup .caps .cap img { border-width: 1.5px; }
+#lineup .more { font: 800 13px/1.3 var(--body); margin-left: 6px; white-space: nowrap; }
+#lineup .more small { display: block; font-size: 11px; color: var(--mute); }
+
+/* あゆみ 900x318 */
+#journey { width: 900px; height: 288px; }
+#journey .box { width: 887px; height: 275px; padding: 24px 22px; display: flex; gap: 12px; }
+#journey .step { flex: 1; display: flex; flex-direction: column; align-items: center; position: relative; }
+#journey .step .cap { --s: 82px; border-width: 3.5px; z-index: 1; }
+#journey .step .cap em { font-size: 19px; }
+#journey .step .cap em span { padding: 4px 9px; }
+#journey .card2 { margin-top: -12px; width: 100%; flex: 1; background: #fff; border: 3px solid var(--k); border-radius: 18px; box-shadow: 5px 5px 0 var(--k); padding: 20px 10px 10px; text-align: center; }
+#journey .yr { display: inline-block; font: 400 18px/1.2 var(--head); background: var(--y); border: 2px solid var(--k); border-radius: 8px; padding: 1px 8px; }
+#journey h3 { margin: 8px 0 0; font: 800 14.5px/1.4 var(--body); }
+#journey h3 small { display: block; margin-top: 4px; font: 700 11px/1.35 var(--body); color: var(--mute); }
+#journey .step:not(:last-child)::after { content: ""; position: absolute; right: -13px; top: 36px; border: 8px solid transparent; border-left: 11px solid var(--k); }
+
+/* 技術 900x276 */
+#skills { width: 900px; height: 276px; }
+#skills .grid { position: absolute; left: 0; top: 0; width: 890px; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+#skills .panel { background: #fff; border: 3.5px solid var(--k); border-radius: 22px; box-shadow: 6px 6px 0 var(--k); padding: 14px 18px 16px; height: 122px; }
+#skills h3 { margin: 0; display: flex; align-items: center; gap: 9px; font: 400 18px/1.3 var(--head); }
+#skills h3 .cap { --s: 24px; border-width: 2.5px; }
+#skills ul { list-style: none; margin: 12px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 7px; }
+#skills li { font: 800 12.5px/1.5 var(--body); background: var(--paper); border: 2px solid var(--k); border-radius: 999px; padding: 2px 11px; }
+
+/* ボタン 230x70 */
+.btn { width: 230px; height: 70px; }
+.btn .box { width: 224px; height: 62px; border-radius: 999px; border-width: 3px; box-shadow: 5px 5px 0 var(--k); background: #fff; display: flex; align-items: center; justify-content: center; gap: 10px; font: 800 17px/1 var(--body); }
+.btn .box img { width: 28px; height: 28px; object-fit: contain; }
+.btn.k .box { background: var(--r); color: #fff; }
+.btn.y .box { background: var(--y); }
+.btn .q { width: 28px; height: 28px; border-radius: 50%; background: #55c500; color: #fff; display: grid; place-items: center; font: 800 16px/1 var(--body); }
+
+/* おわり 900x190 */
+#footer { width: 900px; height: 190px; }
+#footer .box { width: 887px; height: 177px; display: flex; align-items: center; padding: 0 40px 0 30px; gap: 24px; }
+#footer .sleep { width: 128px; flex: none; margin-top: 14px; }
+#footer h2 { margin: 0; font-size: 44px; line-height: 1.1; }
+#footer .pill { margin-top: 12px; font-size: 14px; box-shadow: 3px 3px 0 var(--k); }
+#footer .caps { margin-left: auto; position: relative; width: 170px; height: 130px; }
+#footer .caps .cap { position: absolute; --s: 58px; }
+</style>
+</head>
+<body>
+
+<!-- ヒーロー -->
+<section class="card" id="hero">
+  <div class="box dots">
+    <div class="left">
+      <span class="logo"><img src="src/tsuzukit-wordmark.svg" alt=""></span><span class="who">續橋 涼 / Ryo Tsuzukihashi</span>
+      <h1 class="outline">NOBODY<br>ELSE WILL.</h1>
+      <div class="bubble"><b>誰も作らないものを、まじめに作る。</b><small>I build what nobody else will, and I build it properly.</small></div>
+      <div class="stickers">
+        <div class="st" style="--c:var(--c1);--rot:-4deg"><b>10年</b><span>個人開発</span><small>years of indie dev</small></div>
+        <div class="st" style="--c:var(--c3);--rot:3deg"><b>105</b><span>公開中のアプリ</span><small>apps live</small></div>
+        <div class="st" style="--c:var(--c6);--rot:-2deg"><b>82万+</b><span>ダウンロード</span><small>820K+ downloads</small></div>
+      </div>
+    </div>
+    <div class="owner">
+      <span class="tab">このガチャの持ち主 · OWNER</span>
+      <div class="photo"><img src="src/user_profile.webp" alt=""></div>
+      <p class="name">續橋 涼<small>Ryo Tsuzukihashi · @tsuzuki817</small></p>
+      <div class="badges"><span class="pill">iOS Engineer @ ZOZO</span><span class="pill">Indie Dev</span></div>
+    </div>
+    <img class="wave" src="src/character-wave.png" alt="">
+  </div>
+</section>
+
+<!-- 節の見出し（JS で作る） -->
+<div id="shs"></div>
+
+<!-- 大当たり（JS で作る） -->
+<div id="picks"></div>
+
+<!-- 排出のめやす -->
+<section class="card" id="lineup">
+  <div class="box">
+    <div class="head"><b>排出のめやす</b><small>App Store と Google Play のダウンロード数で決まるレア度 / Rarity by total downloads</small></div>
+    <div class="row" data-t="SSR"><div class="lb"><span class="rare SSR">SSR</span><span>10万DL以上 · 3種<small>100K+ downloads</small></span></div><div class="caps"></div></div>
+    <div class="row" data-t="SR"><div class="lb"><span class="rare SR">SR</span><span>1万DL以上 · 6種<small>10K+ downloads</small></span></div><div class="caps"></div></div>
+    <div class="row" data-t="R"><div class="lb"><span class="rare R">R</span><span>1000DL以上 · 7種<small>1K+ downloads</small></span></div><div class="caps"></div></div>
+    <div class="row" data-t="N"><div class="lb"><span class="rare N">N</span><span>これから育つ · 89種<small>Still growing</small></span></div><div class="caps"></div></div>
+  </div>
+</section>
+
+<!-- あゆみ -->
+<section class="card" id="journey">
+  <div class="box dots">
+    <div class="step"><span class="cap" style="--c:var(--c5)"><em><span>1st</span></em></span><div class="card2"><span class="yr">2016</span><h3>大学生で<br>個人開発を始める<small>Started making apps at university</small></h3></div></div>
+    <div class="step"><span class="cap" style="--c:var(--c3)"><em><span>¥21</span></em></span><div class="card2"><span class="yr">2019</span><h3>初めての<br>収益は21円<small>First ad earnings: ¥21</small></h3></div></div>
+    <div class="step"><span class="cap" style="--c:var(--c1)"><img src="src/travel_memory_map.webp" alt=""></span><div class="card2"><span class="yr">2024</span><h3>旅行思い出<br>マップを出す<small>Released Travel Memory Map</small></h3></div></div>
+    <div class="step"><span class="cap" style="--c:var(--c2)"><img src="src/always_on_timer.webp" alt=""></span><div class="card2"><span class="yr">2025</span><h3>神アプリ<br>グランプリ受賞<small>Won the Kami App Grand Prix</small></h3></div></div>
+    <div class="step"><span class="cap" style="--c:var(--c6)"><img src="src/unchikun.webp" alt=""></span><div class="card2"><span class="yr">2026</span><h3>うんちくんが<br>20万DLを超える<small>UNCHIKUN passes 200K downloads</small></h3></div></div>
+  </div>
+</section>
+
+<!-- 技術 -->
+<section class="card" id="skills">
+  <div class="grid">
+    <div class="panel"><h3><span class="cap" style="--c:var(--c1)"></span>iOS</h3><ul><li>Swift</li><li>SwiftUI</li><li>UIKit</li><li>Combine</li><li>Core Data</li><li>MapKit</li><li>Core Location</li><li>Live Activity</li><li>PiP</li></ul></div>
+    <div class="panel"><h3><span class="cap" style="--c:var(--c6)"></span>Design</h3><ul><li>Human Interface Guidelines</li><li>紙と鉛筆 / Paper &amp; pencil</li></ul></div>
+    <div class="panel"><h3><span class="cap" style="--c:var(--c4)"></span>Backend &amp; Cloud</h3><ul><li>Firebase</li><li>Firestore</li><li>Cloud Functions</li><li>Google Cloud</li><li>App Store Connect API</li></ul></div>
+    <div class="panel"><h3><span class="cap" style="--c:var(--c5)"></span>Tools &amp; Practice</h3><ul><li>Xcode Cloud</li><li>Fastlane</li><li>TestFlight</li><li>GitHub</li><li>TDD</li><li>Pair Programming</li></ul></div>
+  </div>
+</section>
+
+<!-- ボタン（JS で作る） -->
+<div id="btns"></div>
+
+<!-- おわり -->
+<section class="card" id="footer">
+  <div class="box dots">
+    <img class="sleep" src="src/character-sleep.png" alt="">
+    <div>
+      <h2 class="outline">SEE YOU<br>NEXT SPIN!</h2>
+      <span class="pill">また回しにきてね。 · Come back and spin again.</span>
+    </div>
+    <div class="caps">
+      <span class="cap" style="--c:var(--c3);--rot:-18deg;left:0;top:10px"></span>
+      <span class="cap" style="--c:var(--c1);--rot:24deg;left:62px;top:52px"></span>
+      <span class="cap" style="--c:var(--c6);--rot:8deg;left:108px;top:0"></span>
+    </div>
+  </div>
+</section>
+
+<script>
+const SH = [
+  ['sh-who', 'WHO I AM', 'はじめまして', 'c6'],
+  ['sh-pick', 'JACKPOTS', '大当たりのカプセル', 'c3'],
+  ['sh-lineup', 'LINEUP', '105本のラインナップ', 'c1'],
+  ['sh-journey', 'MY 10 YEARS', '10年のあゆみ', 'c5'],
+  ['sh-career', 'CAREER', '経歴', 'c2'],
+  ['sh-skills', 'SKILLS', '使っている技術', 'c4'],
+  ['sh-rules', 'HOW I BUILD', '作るときの決めごと', 'c6'],
+  ['sh-links', 'FIND ME', 'ほかの場所', 'c1'],
+];
+document.getElementById('shs').innerHTML = SH.map(([id, en, ja, c]) =>
+  `<section class="card sh" id="${id}"><span class="cap" style="--c:var(--${c})"></span><h2 class="outline">${en}</h2><span class="pill">${ja}</span></section>`).join('');
+
+const PICKS = [
+  { id: 'pick-unchikun', icon: 'src/unchikun.webp', c: 'c6', rare: 'SSR', badge: '代表作 · No.1', name: 'うんちくん', ja: 'うんちの記録を友達や家族とシェア', en: 'Share poop logs with friends and family', dl: '290,000+', star: '★4.1', plat: ['iOS', 'Android'] },
+  { id: 'pick-notepad', icon: 'src/floating_notepad.webp', c: 'c1', rare: 'SSR', badge: '大ヒット', name: '流れるメモ帳', ja: 'ほかのアプリの上を、メモが流れる', en: 'A notepad that floats over any app via PiP', dl: '160,000+', star: '★4.2', plat: ['iOS'] },
+  { id: 'pick-travel', icon: 'src/travel_memory_map.webp', c: 'c5', rare: 'SSR', badge: 'ロングセラー', name: '旅行思い出マップ', ja: '旅の記憶を、地図に描く', en: 'Paint your travel memories onto the map', dl: '160,000+', star: '★4.6', plat: ['iOS', 'Android'] },
+  { id: 'pick-oshi', icon: 'https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/af/d5/94/afd59419-8cf8-ecff-754d-ba77e548d756/AppIcon-0-0-1x_U007ephone-0-1-85-220.jpeg/256x256bb.jpg', c: 'c2', rare: 'SR', badge: 'バズ', name: '推しアイランド', ja: '画面のいちばん上に、推しのドット絵', en: 'Your fave in pixel art, in the Dynamic Island', dl: '63,000+', star: '', plat: ['iOS', 'Android'] },
+];
+document.getElementById('picks').innerHTML = PICKS.map(p => `
+<section class="card pick" id="${p.id}"><div class="box">
+  <span class="cap" style="--c:var(--${p.c})"><img src="${p.icon}" alt=""></span>
+  <div class="body">
+    <div class="top"><span class="rare ${p.rare}">${p.rare}</span><span class="badge">${p.badge}</span></div>
+    <h3>${p.name}</h3>
+    <p>${p.ja}<small>${p.en}</small></p>
+    <div class="nums"><b>${p.dl}</b><span>DL</span>${p.star ? `<b>${p.star}</b>` : ''}</div>
+    <div class="plat">${p.plat.map(x => `<i>${x}</i>`).join('')}</div>
+  </div>
+</div></section>`).join('');
+
+const COLORS = ['c1', 'c2', 'c3', 'c4', 'c5', 'c6'];
+let n = 0;
+document.querySelectorAll('#lineup .row').forEach(row => {
+  const t = row.dataset.t, icons = ((window.TIERS || {})[t] || []).slice(0, 8);
+  row.querySelector('.caps').innerHTML = icons.map(src => {
+    const c = COLORS[n++ % 6], rot = ((n * 37) % 30) - 15;
+    return `<span class="cap" style="--c:var(--${c});--rot:${rot}deg"><img src="${src}" alt=""></span>`;
+  }).join('') + (t === 'N' ? '<span class="more">ほか81種<small>+81 more</small></span>' : '');
+});
+
+const BTNS = [
+  ['btn-site', 'k', '<img src="src/tsuzukit-symbol.svg" alt="" style="filter:invert(1)">', 'tsuzukit.com'],
+  ['btn-x', '', '<img src="src/x.png" alt="">', 'X'],
+  ['btn-youtube', '', '<img src="src/youtube.png" alt="">', 'YouTube'],
+  ['btn-instagram', '', '<img src="src/instagram.png" alt="">', 'Instagram'],
+  ['btn-tiktok', '', '<img src="src/tiktok.png" alt="">', 'TikTok'],
+  ['btn-qiita', '', '<span class="q">Q</span>', 'Qiita'],
+  ['btn-income', 'y', '', '収益公開を読む →'],
+  ['btn-apps', 'y', '', '105本ぜんぶ見る →'],
+];
+document.getElementById('btns').innerHTML = BTNS.map(([id, v, ic, label]) =>
+  `<section class="card btn ${v}" id="${id}"><div class="box">${ic}<span>${label}</span></div></section>`).join('');
+
+const c = new URLSearchParams(location.search).get('c');
+if (c) document.getElementById(c).classList.add('on');
+else document.querySelectorAll('.card').forEach(e => { e.classList.add('on'); e.style.marginBottom = '24px'; });
+</script>
+</body>
+</html>
