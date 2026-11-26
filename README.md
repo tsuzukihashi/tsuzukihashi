@@ -1,12 +1,12 @@
-<a href="https://tsuzukit.com/"><img src="assets/hero.png" alt="NOBODY ELSE WILL. 誰も作らないものを、まじめに作る。續橋 涼 / Ryo Tsuzukihashi。個人開発10年、公開中のアプリ105本、82万ダウンロード" width="100%"></a>
+<a href="https://tsuzukit.com/"><img src="assets/hero.png" alt="NOBODY ELSE WILL. 誰も作らないものを、まじめに作る。續橋 涼 / Ryo Tsuzukihashi。個人開発10年、公開中のアプリ127本、82万ダウンロード" width="100%"></a>
 
 <img src="assets/sh-who.png" alt="WHO I AM はじめまして" width="100%">
 
-續橋涼です。ふだんはZOZOでZOZOTOWNのiOSアプリを作っていて、それとは別に、大学生だった2016年から自分のアプリを出し続けています。いまApp Storeに105本あって、全部合わせると82万ダウンロードになりました。
+續橋涼です。ふだんはZOZOでZOZOTOWNのiOSアプリを作っていて、それとは別に、大学生だった2016年から自分のアプリを出し続けています。いまApp Storeに127本あって、全部合わせると82万ダウンロードになりました。
 
 作るのは、うんちの記録や目薬をさす時間の通知、貝殻を見分ける図鑑のように、誰かが市場がないと言って通り過ぎたものばかりです。そっち側を拾って、手を抜かずに作っています。
 
-> I'm Ryo Tsuzukihashi. By day I build the ZOZOTOWN iOS app at ZOZO, and on the side I've kept shipping my own apps since 2016, back when I was at university. 105 of them are on the App Store today, with 820,000 downloads in total.
+> I'm Ryo Tsuzukihashi. By day I build the ZOZOTOWN iOS app at ZOZO, and on the side I've kept shipping my own apps since 2016, back when I was at university. 127 of them are on the App Store today, with 820,000 downloads in total.
 >
 > Most of what I make is the stuff people walk past because there's "no market" for it: a poop log, an eye-drop reminder, a seashell field guide. I pick those up and build them properly.
 
@@ -14,21 +14,21 @@
 
 <p>
   <a href="https://apps.apple.com/jp/app/id6758856276"><img src="assets/pick-unchikun.png" alt="うんちくん SSR 290,000+ DL ★4.1 iOS / Android" width="49%"></a>
-  <a href="https://apps.apple.com/jp/app/id1598380826"><img src="assets/pick-notepad.png" alt="流れるメモ帳 SSR 160,000+ DL ★4.2 iOS" width="49%"></a>
+  <a href="https://apps.apple.com/jp/app/id1598380826"><img src="assets/pick-notepad.png" alt="流れるメモ帳 SSR 170,000+ DL ★4.2 iOS" width="49%"></a>
   <a href="https://apps.apple.com/jp/app/id6478291625"><img src="assets/pick-travel.png" alt="旅行思い出マップ SSR 160,000+ DL ★4.6 iOS / Android" width="49%"></a>
   <a href="https://apps.apple.com/jp/app/id6751716346"><img src="assets/pick-oshi.png" alt="推しアイランド SR 63,000+ DL iOS / Android" width="49%"></a>
 </p>
 
-<img src="assets/sh-lineup.png" alt="LINEUP 105本のラインナップ" width="100%">
+<img src="assets/sh-lineup.png" alt="LINEUP 127本のラインナップ" width="100%">
 
-<a href="https://tsuzukit.com/"><img src="assets/lineup.png" alt="排出のめやす。SSR 10万DL以上 3種、SR 1万DL以上 6種、R 1000DL以上 7種、N これから育つ 89種" width="100%"></a>
+<a href="https://tsuzukit.com/"><img src="assets/lineup.png" alt="排出のめやす。SSR 10万DL以上 3種、SR 1万DL以上 6種、R 1000DL以上 7種、N これから育つ 111種" width="100%"></a>
 
-tsuzukit.com はサイトそのものがガチャになっていて、回すと105本のうちどれかが1本出てきます。レア度はApp StoreとGoogle Playのダウンロード数を足して決めています。
+tsuzukit.com はサイトそのものがガチャになっていて、回すと127本のうちどれかが1本出てきます。レア度はApp StoreとGoogle Playのダウンロード数を足して決めています。
 
-> On tsuzukit.com the whole site is a capsule toy machine. Spin it and one of the 105 apps drops out. Rarity comes from App Store and Google Play downloads combined.
+> On tsuzukit.com the whole site is a capsule toy machine. Spin it and one of the 127 apps drops out. Rarity comes from App Store and Google Play downloads combined.
 
 <p align="center">
-  <a href="https://tsuzukit.com/portfolio/"><img src="assets/btn-apps.png" alt="105本ぜんぶ見る" width="200"></a>
+  <a href="https://tsuzukit.com/portfolio/"><img src="assets/btn-apps.png" alt="127本ぜんぶ見る" width="200"></a>
 </p>
 
 <img src="assets/sh-journey.png" alt="MY 10 YEARS 10年のあゆみ" width="100%">
@@ -42,7 +42,7 @@ tsuzukit.com はサイトそのものがガチャになっていて、回すと1
 | 2024 – | **ZOZO** | ZOZOTOWN の iOS アプリ<br>The ZOZOTOWN iOS app |
 | 2023 | **DeNA** | ライブ配信アプリ Pococha。ショート動画機能を技術検証から再生基盤まで担当<br>Pococha, a live streaming app. Owned the short video feature from validation to playback |
 | 2019 | **Yahoo Japan** | PayPayフリマの立ち上げを LeanXP で。ペアプロと TDD が身についた<br>Launched PayPay Flea Market with LeanXP, pair programming and TDD |
-| 2016 – | **Indie** | App Store に 105 本<br>105 apps live on the App Store |
+| 2016 – | **Indie** | App Store に 127 本<br>127 apps live on the App Store |
 
 - [iOSDC Japan 2022](https://fortee.jp/iosdc-japan-2022/proposal/7646ca37-310b-42d1-8764-d80dd12714fd) で登壇しました。iOS 15 のピクチャ・イン・ピクチャで動画以外の UI を出す話です。<br>Spoke at iOSDC Japan 2022 about showing any UI, not just video, with Picture in Picture on iOS 15.
 - いつでもタイマーが、YouTuber のマメさんが開いた神アプリグランプリでグランプリをもらいました。<br>AlwaysOnTimer won the grand prize at the Kami App Grand Prix.
